@@ -99,8 +99,8 @@ export default defineComponent({
   },
   setup() {
     onMounted(async () => {
-      const a = await fetch('/firdic-static/acquisition-detail.json');
-      console.log(a);
+      const a = await fetch('/firdic-static/descendant.json');
+      console.log(a.json());
     });
   },
 });
