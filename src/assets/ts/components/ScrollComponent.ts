@@ -10,7 +10,7 @@ import {
   stringSnakeToCamel,
   throttle,
 } from "../_utils/index";
-import { CookieComponent } from "./_CookieComponent";
+import { CookieComponent } from "./CookieComponent";
 
 export interface ScrollOptions {
   saveState?: boolean;

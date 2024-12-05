@@ -4,7 +4,7 @@ import {
   getUniqueIdWithPrefix,
 } from "../_utils/index";
 // Helpers
-import { CookieComponent } from "./_CookieComponent";
+import { CookieComponent } from "./CookieComponent";
 
 export interface ToggleOptions {
   saveState: boolean;

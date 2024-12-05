@@ -15,7 +15,7 @@
 <script lang="ts">
 import { getAssetPath } from "@/core/helpers/assets";
 import { defineComponent, onMounted } from "vue";
-import { ScrollTopComponent } from "@/assets/ts/components/_ScrollTopComponent";
+import { ScrollTopComponent } from "@/assets/ts/components/ScrollTopComponent";
 import { scrolltopDispaly } from "@/layouts/default-layout/config/helper";
 
 export default defineComponent({
