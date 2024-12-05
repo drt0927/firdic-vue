@@ -33,7 +33,7 @@ jobs:
         run: npm build
 
       - name: Deploy to external repository
-        uses: drt0927/firdic@main
+        uses: cpina/github-action-push-to-another-repository@main
         env:
           # 🏗️ <internal repository>, run GitHub Action.
           # 🎁 <external repository>, receiving Artifacts.
@@ -55,8 +55,8 @@ jobs:
           # SSH_DEPLOY_KEY: ${{ secrets.DEPLOY_PRIVATE_KEY }}
         with:
           # GitHub Action output files
-          source-directory: 'public'
-          destination-github-username: filbert
+          source-directory: ''
+          destination-github-username: drt0927
           destination-repository-name: firdic
           commit-message: ${{ github.event.commits[0].message }}
           user-email: drt_0927@naver.com
