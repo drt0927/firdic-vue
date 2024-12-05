@@ -12,7 +12,7 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
-  base: "/metronic8/vue/demo2/",
+  base: "/firdic/",
   build: {
     chunkSizeWarningLimit: 3000,
   },
