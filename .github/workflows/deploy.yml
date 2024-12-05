@@ -55,7 +55,7 @@ jobs:
           # SSH_DEPLOY_KEY: ${{ secrets.DEPLOY_PRIVATE_KEY }}
         with:
           # GitHub Action output files
-          source-directory: ''
+          source-directory: dist/
           destination-github-username: drt0927
           destination-repository-name: firdic
           commit-message: ${{ github.event.commits[0].message }}
