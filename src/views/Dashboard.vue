@@ -69,7 +69,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, onMounted } from "vue";
 import TableWidget9 from "@/components/widgets/tables/Widget9.vue";
 import TableWidget5 from "@/components/widgets/tables/Widget5.vue";
 import ListWidget1 from "@/components/widgets/lists/Widget1.vue";
@@ -96,6 +96,12 @@ export default defineComponent({
     MixedWidget5,
     MixedWidget7,
     MixedWidget10,
+  },
+  setup() {
+    onMounted(async () => {
+      const a = await fetch('/firdic-static/tfd/acquisition-detail.json');
+      console.log(a);
+    });
   },
 });
 </script>
