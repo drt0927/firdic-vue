@@ -9,7 +9,7 @@ import { useConfigStore } from "@/stores/config";
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
-    redirect: "/dashboard",
+    redirect: "/dic/descendant",
     component: () => import("@/layouts/default-layout/DefaultLayout.vue"),
     meta: {
       middleware: "auth",
@@ -20,8 +20,8 @@ const routes: Array<RouteRecordRaw> = [
         name: "dashboard",
         component: () => import("@/views/Dashboard.vue"),
         meta: {
-          pageTitle: "Dashboard",
-          breadcrumbs: ["Dashboards"],
+          pageTitle: "The First Descendant Dictionary",
+          breadcrumbs: ["The First Descendant Dictionary"],
         },
       },
       {
@@ -31,6 +31,15 @@ const routes: Array<RouteRecordRaw> = [
         meta: {
           pageTitle: "Layout Builder",
           breadcrumbs: ["Layout"],
+        },
+      },
+      {
+        path: "/dic/descendant",
+        name: "descendant",
+        component: () => import("@/views/dic/Descendant.vue"),
+        meta: {
+          pageTitle: "계승자 (Descendant)",
+          breadcrumbs: ["The First Descendant Dictionary", "Descendant"],
         },
       },
       {

@@ -26,6 +26,14 @@ export const demo = computed(() => {
   return import.meta.env.VITE_APP_DEMO;
 });
 
+/**
+ * Return github link
+ * @returns {string}
+ */
+export const githubLink = computed(() => {
+  return import.meta.env.VITE_APP_GITHUB_LINK;
+});
+
 //code copy button initialization
 export const useCopyClipboard = () => {
   const _init = (element: any) => {

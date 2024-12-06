@@ -16,13 +16,15 @@ body {
 
 @include color-mode(light) {
 	body:not(.app-blank) {
-		background-image: url('/media/patterns/header-bg.jpg');
+		// background-image: url('/media/patterns/header-bg.jpg');
+		background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0) ), url('/media/patterns/tfd_banner.png');
 	}
 }
 
 @include color-mode(dark) {
 	body:not(.app-blank) {
-		background-image: url('/media/patterns/header-bg-dark.jpg');
+		// background-image: url('/media/patterns/header-bg-dark.jpg');
+		background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0) ), url('/media/patterns/tfd_banner.png');
 	}
 }
 

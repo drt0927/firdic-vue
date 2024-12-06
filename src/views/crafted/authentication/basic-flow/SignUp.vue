@@ -287,7 +287,8 @@ export default defineComponent({
           },
         }).then(function () {
           // Go to page after successfully login
-          router.push({ name: "dashboard" });
+          router.push({ name: "descendant" });
+          // router.push({ name: "dashboard" });
         });
       } else {
         Swal.fire({

@@ -31,7 +31,8 @@
 
       <!--begin::Mobile logo-->
       <div class="header-logo me-5 me-md-10 flex-grow-1 flex-lg-grow-0">
-        <router-link to="/dashboard">
+        <!-- <router-link to="/dashboard"> -->
+        <router-link to="/dic/descendant">
           <img
             alt="Logo"
             :src="getAssetPath('media/logos/demo2.png')"
@@ -58,7 +59,7 @@
 
         <!--begin::Topbar-->
         <div class="d-flex align-items-stretch flex-shrink-0">
-          <KTTopbar></KTTopbar>
+          <!-- <KTTopbar></KTTopbar> -->
         </div>
         <!--end::Topbar-->
       </div>

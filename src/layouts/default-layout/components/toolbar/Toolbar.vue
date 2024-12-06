@@ -12,40 +12,6 @@
     >
       <PageTitle />
 
-      <!--begin::Actions-->
-      <div class="d-flex align-items-center py-3 py-md-1">
-        <!--begin::Wrapper-->
-        <div class="me-4">
-          <!--begin::Menu-->
-          <a
-            href="#"
-            class="btn btn-custom btn-active-white btn-flex btn-color-white btn-active-color-primary fw-bold"
-            data-kt-menu-trigger="click"
-            data-kt-menu-placement="bottom-end"
-            data-kt-menu-flip="top-end"
-          >
-            <KTIcon icon-name="filter" icon-class="fs-5 text-gray-500 me-1" />
-            Filter
-          </a>
-
-          <Dropdown1></Dropdown1>
-          <!--end::Menu-->
-        </div>
-        <!--end::Wrapper-->
-
-        <!--begin::Button-->
-        <a
-          href="#"
-          data-bs-theme="light"
-          class="btn bg-body btn-active-color-primary"
-          data-bs-toggle="modal"
-          data-bs-target="#kt_modal_create_app"
-          id="kt_toolbar_primary_button"
-          >Create</a
-        >
-        <!--end::Button-->
-      </div>
-      <!--end::Actions-->
     </div>
     <!--end::Container-->
   </div>
