@@ -2,7 +2,7 @@
   <!--begin::Col-->
   <div class="col-md-6 col-xxl-4">
     <!--begin::Card-->
-    <a :href="`#/dic/descendant/${descendantId}/info`" class="card" :class="cardClasses">
+    <a :href="`#/dic/descendant/${descendantId}`" class="card" :class="cardClasses">
       <!--begin::Card body-->
       <div class="card-body d-flex flex-center flex-column p-9">
         <!--begin::Avatar-->
@@ -114,9 +114,11 @@ export default defineComponent({
 }
 
 .normal {
-  box-shadow: 0 0 20px rgb(1, 110, 216);
+  box-shadow: 0 0 20px #016ed8;
+  background: linear-gradient(45deg, black, #016ed8);
 }
 .ult {
-  box-shadow: 0 0 20px rgb(193, 145, 64);
+  box-shadow: 0 0 20px #c19140;
+  background: linear-gradient(45deg, black, #c19140);
 }
 </style>

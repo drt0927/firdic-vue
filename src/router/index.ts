@@ -46,22 +46,11 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: "/dic/descendant/:id",
         name: "descendant-detail",
-        component: () => import("@/components/page-layouts/DescendantProfile.vue"),
+        component: () => import("@/views/dic/DescendantDetail.vue"),
         meta: {
-          // pageTitle: "계승자 상세",
+          pageTitle: "계승자 상세",
           breadcrumbs: ["퍼딕 사전", "계승자 상세"],
         },
-        children: [
-          {
-            path: "info",
-            name: "descendant-detail-info",
-            component: () =>
-              import("@/views/dic/DescendantDetail.vue"),
-            meta: {
-              pageTitle: "계승자 상세",
-            },
-          },
-        ]
       },
       {
         path: "/dic/weapon",
