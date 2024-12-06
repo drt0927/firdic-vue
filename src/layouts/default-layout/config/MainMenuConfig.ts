@@ -18,20 +18,20 @@ const MainMenuConfig: Array<MenuItem> = [
   //   ],
   // },
   {
-    heading: "Dictionary",
+    heading: "퍼딕 사전",
     route: "/dic",
     pages: [
       {
         heading: "계승자",
         route: "/dic/descendant",
-        keenthemesIcon: "calendar-8",
-        bootstrapIcon: "bi-calendar3-event",
+        keenthemesIcon: "user-square",
+        bootstrapIcon: "bi-file-person",
       },
       {
         heading: "무기",
         route: "/dic/weapon",
-        keenthemesIcon: "calendar-8",
-        bootstrapIcon: "bi-calendar3-event",
+        keenthemesIcon: "information-3",
+        bootstrapIcon: "bi-info-square",
       },
       {
         heading: "모듈",

@@ -39,15 +39,14 @@
       ></Card3> -->
 
       <CardDescendant v-for="des of descendant"
-        cardClasses="shadow-sm"
-        :name="des.descendant_name"
-        :nameEng="des.detail.eng_name"
-        :avatar="des.descendant_image_url"
-        :attribute="des.detail.attribute"
-        :role="des.detail.role"
-        :tier="des.detail.tier"
-        :passive="des.descendant_passive_skill.skill_name"
-        :descendantId="des.descendant_id"
+      cardClasses="shadow-sm"
+      :name="des.descendant_name"
+      :nameEng="des.detail.eng_name"
+      :avatar="des.descendant_image_url"
+      :attribute="des.detail.attribute"
+      :role="des.detail.role"
+      :tier="des.detail.tier"
+      :passive="des.descendant_passive_skill.skill_name"
       ></CardDescendant>
       <!--
       { name: "Emma Smith", src: getAssetPath("media/avatars/300-6.jpg") }
@@ -77,12 +76,17 @@ import Card3 from "@/components/cards/Card3.vue";
 import CardDescendant from "@/components/cards/CardDescendant.vue";
 
 export default defineComponent({
-  name: "dic-descendant",
+  name: "dic-weapon",
   components: {
     Card3,
     CardDescendant
   },
   setup() {
+    const users1 = [
+      { name: "Emma Smith", src: getAssetPath("media/avatars/300-6.jpg") },
+      { name: "Rudy Stone", src: getAssetPath("media/avatars/300-1.jpg") },
+      { name: "Susan Redwood", initials: "S", state: "primary" },
+    ];
     const descendant = ref<IDescendant[]>([]);
     onMounted(async () => {
       const res = await getDescendant();
@@ -92,7 +96,8 @@ export default defineComponent({
 
     return {
       getAssetPath,
-      descendant
+      descendant,
+      users1
     };
   },
 });

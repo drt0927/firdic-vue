@@ -159,7 +159,18 @@
                   :to="menuItem.route"
                 >
                   <span class="menu-icon">
-                    <KTIcon icon-name="element-8" icon-class="fs-2" />
+                    <span class="menu-icon">
+                      <i
+                        v-if="headerMenuIcons === 'bootstrap'"
+                        :class="menuItem.bootstrapIcon"
+                        class="bi fs-3"
+                      ></i>
+                      <KTIcon
+                        v-if="headerMenuIcons === 'keenthemes'"
+                        :icon-name="menuItem.keenthemesIcon"
+                        icon-class="fs-2"
+                      />
+                    </span>
                   </span>
                   <span class="menu-title">{{
                     translate(menuItem.heading)

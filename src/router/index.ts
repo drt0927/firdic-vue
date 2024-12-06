@@ -39,8 +39,37 @@ const routes: Array<RouteRecordRaw> = [
         name: "descendant",
         component: () => import("@/views/dic/Descendant.vue"),
         meta: {
-          pageTitle: "계승자 (Descendant)",
-          breadcrumbs: ["Dictionary", "Descendant"],
+          pageTitle: "계승자",
+          breadcrumbs: ["퍼딕 사전", "계승자"],
+        },
+      },
+      {
+        path: "/dic/descendant/:id",
+        name: "descendant-detail",
+        component: () => import("@/components/page-layouts/DescendantProfile.vue"),
+        meta: {
+          // pageTitle: "계승자 상세",
+          breadcrumbs: ["퍼딕 사전", "계승자 상세"],
+        },
+        children: [
+          {
+            path: "info",
+            name: "descendant-detail-info",
+            component: () =>
+              import("@/views/dic/DescendantDetail.vue"),
+            meta: {
+              pageTitle: "계승자 상세",
+            },
+          },
+        ]
+      },
+      {
+        path: "/dic/weapon",
+        name: "weapon",
+        component: () => import("@/views/dic/Weapon.vue"),
+        meta: {
+          pageTitle: "무기",
+          breadcrumbs: ["퍼딕 사전", "무기"],
         },
       },
       {

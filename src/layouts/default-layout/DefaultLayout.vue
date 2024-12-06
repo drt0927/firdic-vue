@@ -41,8 +41,8 @@
   <KTCreateApp />
   <KTInviteFriendsModal />
 
-  <KTToolbarButtons />
-  <KTHelpDrawer />
+  <!-- <KTToolbarButtons /> -->
+  <!-- <KTHelpDrawer /> -->
 </template>
 
 <script lang="ts">

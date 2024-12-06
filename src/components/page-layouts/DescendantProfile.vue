@@ -9,10 +9,11 @@
           <div
             class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative"
           >
-            <img :src="getAssetPath('media/avatars/300-1.jpg')" alt="image" />
-            <div
+            <!-- <img :src="getAssetPath('media/avatars/300-1.jpg')" alt="image" /> -->
+            <img :src="descendant?.descendant_image_url" alt="image" />
+            <!-- <div
               class="position-absolute translate-middle bottom-0 start-100 mb-6 bg-success rounded-circle border border-4 border-white h-20px w-20px"
-            ></div>
+            ></div> -->
           </div>
         </div>
         <!--end::Pic-->
@@ -27,14 +28,14 @@
             <div class="d-flex flex-column">
               <!--begin::Name-->
               <div class="d-flex align-items-center mb-2">
-                <a
-                  href="#"
-                  class="text-gray-800 text-hover-primary fs-2 fw-bold me-1"
-                  >Max Smith</a
-                >
-                <a href="#">
-                  <KTIcon icon-name="verify" icon-class="fs-1 text-primary" />
-                </a>
+                <span class="text-gray-800 fs-2 fw-bold me-1">
+                  <img v-if="descendant?.detail.attribute === 'none'" :src="getAssetPath('media/tfd/ico_char_attribute--none.png')" alt="image" width="25px" />
+                  <img v-if="descendant?.detail.attribute === 'ice'" :src="getAssetPath('media/tfd/ico_char_attribute--chill.png')" alt="image" width="25px" />
+                  <img v-if="descendant?.detail.attribute === 'electric'" :src="getAssetPath('media/tfd/ico_char_attribute--electric.png')" alt="image" width="25px" />
+                  <img v-if="descendant?.detail.attribute === 'fire'" :src="getAssetPath('media/tfd/ico_char_attribute--fire.png')" alt="image" width="25px" />
+                  <img v-if="descendant?.detail.attribute === 'poison'" :src="getAssetPath('media/tfd/ico_char_attribute--toxic.png')" alt="image" width="25px" />
+                  &nbsp;{{ descendant?.descendant_name }} <small>({{ descendant?.detail.eng_name }})</small>
+                </span>
               </div>
               <!--end::Name-->
 
@@ -45,9 +46,9 @@
                   class="d-flex align-items-center text-gray-500 text-hover-primary me-5 mb-2"
                 >
                   <KTIcon icon-name="profile-circle" icon-class="fs-4 me-1" />
-                  Developer
+                  {{ descendant?.detail.role }}
                 </a>
-                <a
+                <!-- <a
                   href="#"
                   class="d-flex align-items-center text-gray-500 text-hover-primary me-5 mb-2"
                 >
@@ -60,7 +61,7 @@
                 >
                   <KTIcon icon-name="sms" icon-class="fs-4 me-1" />
                   max@kt.com
-                </a>
+                </a> -->
               </div>
               <!--end::Info-->
             </div>
@@ -305,8 +306,10 @@
 
 <script lang="ts">
 import { getAssetPath } from "@/core/helpers/assets";
-import { defineComponent } from "vue";
+import { defineComponent, onMounted, ref } from "vue";
 import Dropdown3 from "@/components/dropdown/Dropdown3.vue";
+import { useRoute } from "vue-router";
+import { getDescendant, type IDescendant } from "@/core/data/tfd/descendant";
 
 export default defineComponent({
   name: "profile-page-layout",
@@ -314,9 +317,17 @@ export default defineComponent({
     Dropdown3,
   },
   setup() {
+    const id = useRoute().params.id;
+    const descendant = ref<IDescendant>();
+    onMounted(async () => {
+      const res = await getDescendant();
+      descendant.value = res.find((x) => x.descendant_id === id);
+      console.log(descendant.value);
+    });
     
     return {
       getAssetPath,
+      descendant
     };
   },
 });

@@ -2,13 +2,13 @@
   <!--begin::Col-->
   <div class="col-md-6 col-xxl-4">
     <!--begin::Card-->
-    <div class="card pointer" :class="cardClasses">
+    <a :href="`#/dic/descendant/${descendantId}/info`" class="card" :class="cardClasses">
       <!--begin::Card body-->
       <div class="card-body d-flex flex-center flex-column p-9">
         <!--begin::Avatar-->
         <div v-if="avatar" class="symbol symbol-65px symbol-circle mb-5">
           <img :src="avatar" :class="tier" alt="image" />
-          <div class="bg-light position-absolute rounded-circle translate-middle start-100 top-100 border border-4 border-white h-30px w-30px ms-n3 mt-n3">
+          <div class="bg-light position-absolute rounded-circle translate-middle start-100 top-100 border border-2 border-black h-30px w-30px ms-n3 mt-n3">
             <img v-if="attribute === 'none'" :src="getAssetPath('media/tfd/ico_char_attribute--none.png')" alt="image" width="100%" />
             <img v-if="attribute === 'ice'" :src="getAssetPath('media/tfd/ico_char_attribute--chill.png')" alt="image" width="100%" />
             <img v-if="attribute === 'electric'" :src="getAssetPath('media/tfd/ico_char_attribute--electric.png')" alt="image" width="100%" />
@@ -75,7 +75,7 @@
         <!--end::Follow-->
       </div>
       <!--begin::Card body-->
-    </div>
+    </a>
     <!--begin::Card-->
   </div>
   <!--end::Col-->
@@ -97,7 +97,8 @@ export default defineComponent({
     attribute: String,
     role: String,
     tier: String,
-    passive: String
+    passive: String,
+    descendantId: String
   },
   setup() {
     return {
