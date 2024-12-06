@@ -54,7 +54,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from "vue";
+import { defineComponent, onMounted, ref } from "vue";
 import { getDescendant, type IDescendant } from "@/core/data/tfd/descendant";
 import { getAssetPath } from "@/core/helpers/assets";
 import Card3 from "@/components/cards/Card3.vue";
@@ -65,12 +65,10 @@ export default defineComponent({
     Card3,
   },
   setup() {
-    const descendant: IDescendant[] = []
+    const descendant = ref<IDescendant[]>([]);
     onMounted(async () => {
       const res = await getDescendant();
-      console.log(res);
-      descendant.push(...res);
-      // console.log(descendant);
+      descendant.value.push(...res);
     });
 
     return {
