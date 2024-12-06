@@ -18,7 +18,7 @@ const MainMenuConfig: Array<MenuItem> = [
   //   ],
   // },
   {
-    heading: "The First Descendant Dictionary",
+    heading: "Dictionary",
     route: "/dic",
     pages: [
       {

@@ -68,8 +68,14 @@ export default defineComponent({
 @import "assets/sass/plugins";
 @import "assets/sass/style";
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
 #app {
   display: contents;
+}
+
+html, body {
+  font-family: 'Noto Sans KR';
 }
 </style>
 @/layouts/default-layout/config/config

@@ -28,14 +28,29 @@
 
     <div class="card-body pt-0">
       <!--begin::Row-->
-  <div class="row g-6 mb-6 g-xl-9 mb-xl-9">
+  <!-- <div class="row g-6 mb-6 g-xl-9 mb-xl-9"> -->
+  <div class="row g-6 g-xl-9">
     <!--begin::Followers-->
-      <Card3 v-for="des of descendant"
+      <!-- <Card3 v-for="des of descendant"
         :name="des.descendant_name"
         :online="true"
         :avatar="des.descendant_image_url"
         :connected="true"
-      ></Card3>
+      ></Card3> -->
+
+      <CardDescendant v-for="des of descendant"
+      cardClasses="shadow-sm"
+      :name="des.descendant_name"
+      :nameEng="des.detail.eng_name"
+      :avatar="des.descendant_image_url"
+      :attribute="des.detail.attribute"
+      :role="des.detail.role"
+      :tier="des.detail.tier"
+      :passive="des.descendant_passive_skill.skill_name"
+      ></CardDescendant>
+      <!--
+      { name: "Emma Smith", src: getAssetPath("media/avatars/300-6.jpg") }
+      -->
 
       <!-- <Card3
         name="Olivia Larson"
@@ -58,22 +73,31 @@ import { defineComponent, onMounted, ref } from "vue";
 import { getDescendant, type IDescendant } from "@/core/data/tfd/descendant";
 import { getAssetPath } from "@/core/helpers/assets";
 import Card3 from "@/components/cards/Card3.vue";
+import CardDescendant from "@/components/cards/CardDescendant.vue";
 
 export default defineComponent({
   name: "main-descendant",
   components: {
     Card3,
+    CardDescendant
   },
   setup() {
+    const users1 = [
+      { name: "Emma Smith", src: getAssetPath("media/avatars/300-6.jpg") },
+      { name: "Rudy Stone", src: getAssetPath("media/avatars/300-1.jpg") },
+      { name: "Susan Redwood", initials: "S", state: "primary" },
+    ];
     const descendant = ref<IDescendant[]>([]);
     onMounted(async () => {
       const res = await getDescendant();
+      console.log(res);
       descendant.value.push(...res);
     });
 
     return {
       getAssetPath,
       descendant,
+      users1
     };
   },
 });
