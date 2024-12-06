@@ -89,7 +89,7 @@
 <script lang="ts">
 import { getAssetPath } from "@/core/helpers/assets";
 import { computed, defineComponent, ref, type PropType } from "vue";
-import { type IDescendantSkill } from '@/core/data/tfd/descendant';
+import type { IDescendantSkill } from '@/core/data/tfd/descendant';
 
 export default defineComponent({
   name: "descendant-skill",

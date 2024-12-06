@@ -35,7 +35,7 @@
 <script lang="ts">
 import { getAssetPath } from "@/core/helpers/assets";
 import { computed, defineComponent, ref, type PropType } from "vue";
-import { type IDescendantStat } from '@/core/data/tfd/descendant';
+import type { IDescendantStat } from '@/core/data/tfd/descendant';
 
 export default defineComponent({
   name: "descendant-stat",
